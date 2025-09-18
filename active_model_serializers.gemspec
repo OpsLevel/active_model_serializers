@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 2.1'
 
-  rails_versions = ['>= 4.1', '< 7.3']
+  rails_versions = ['>= 4.1', '<= 7.3']
   spec.add_runtime_dependency 'activemodel', rails_versions
   # 'activesupport', rails_versions
   # 'builder'
