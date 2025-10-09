@@ -102,6 +102,25 @@ For benchmarks against alternatives, see https://github.com/rails-api/active_mod
 
 
 
+## Python Tooling
+
+This project includes Python scripts for automation and tooling purposes. The Python components require **Python 3.11 or later** to ensure compatibility with the latest language features and security updates.
+
+### Quick Start
+
+```bash
+# Verify your Python version
+python3 --version  # Should be 3.11 or later
+
+# Run the setup script
+python3 scripts/setup.py
+
+# Or run tests directly
+python3 scripts/test.py
+```
+
+See [scripts/README.md](scripts/README.md) for more details.
+
 ## Semantic Versioning
 
 This project adheres to [semver](http://semver.org/)

@@ -1,0 +1,5 @@
+# Python dependencies for the active_model_serializers project
+# This file ensures compatibility with the latest Python versions (3.11+)
+
+# No external dependencies required for basic functionality
+# Add project-specific dependencies below as needed
