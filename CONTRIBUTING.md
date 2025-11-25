@@ -50,9 +50,10 @@ please adhere to these standards:
 - The test suite must pass on [supported Ruby versions](.travis.yml)
 - Include updates to the [documentation](docs)
   where applicable.
-- Update the
-  [CHANGELOG](CHANGELOG.md)
-  to the appropriate sections with a brief description of the changes.
+- Add a changelog entry using [Changie](https://changie.dev/) by running `changie new`.
+  Select the appropriate change kind (breaking, feature, fix, misc) and provide a brief
+  description of the changes. This creates a file in `.changes/unreleased/` that will be
+  included in the next release. See [.changes/README.md](.changes/README.md) for more details.
 - Do not change the VERSION file.
 
 #### Running tests
