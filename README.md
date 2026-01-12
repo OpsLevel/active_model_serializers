@@ -2,7 +2,84 @@
 
 ## About
 
+ActiveModel::Serializers provides a conventions-based approach to serializing resources in a Rails application. It allows you to generate JSON in an object-oriented and convention-driven manner, making it easier to build and maintain JSON APIs.
+
 ActiveModelSerializers is undergoing some renovations. See [Development Status](#status-of-ams).
+
+## Prerequisites
+
+- **Ruby**: Version 2.1 or higher
+- **Rails**: Compatible with Rails 4.x and 5.x (see [version compatibility](#documentation) for details)
+
+## Installation
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'active_model_serializers'
+```
+
+And then execute:
+
+```bash
+$ bundle install
+```
+
+Or install it yourself as:
+
+```bash
+$ gem install active_model_serializers
+```
+
+## Quick Start
+
+### Basic Usage
+
+Once installed, you can generate a serializer for your model:
+
+```bash
+$ rails generate serializer user
+```
+
+This creates a serializer file in `app/serializers/user_serializer.rb`:
+
+```ruby
+class UserSerializer < ActiveModel::Serializer
+  attributes :id, :name, :email
+end
+```
+
+### Using Serializers in Controllers
+
+In your controller, Rails will automatically use the serializer:
+
+```ruby
+class UsersController < ApplicationController
+  def show
+    @user = User.find(params[:id])
+    render json: @user
+  end
+end
+```
+
+### Customizing Serializers
+
+You can customize your serializers by adding associations and custom attributes:
+
+```ruby
+class UserSerializer < ActiveModel::Serializer
+  attributes :id, :name, :email, :full_name
+  
+  has_many :posts
+  has_one :profile
+  
+  def full_name
+    "#{object.first_name} #{object.last_name}"
+  end
+end
+```
+
+For more detailed usage examples and advanced features, please refer to the [Documentation](#documentation) section.
 
 ## Getting Help
 
