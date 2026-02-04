@@ -4,6 +4,32 @@
 
 ActiveModelSerializers is undergoing some renovations. See [Development Status](#status-of-ams).
 
+## Installation
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'active_model_serializers', '~> 0.10.0'
+```
+
+And then execute:
+
+```bash
+$ bundle install
+```
+
+Or install it yourself as:
+
+```bash
+$ gem install active_model_serializers
+```
+
+For the latest development version:
+
+```ruby
+gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
+```
+
 ## Getting Help
 
 If you find a bug, please report an [Issue](https://github.com/rails-api/active_model_serializers/issues/new)
@@ -109,3 +135,7 @@ This project adheres to [semver](http://semver.org/)
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## License
+
+This project is licensed under the MIT License - see the [MIT-LICENSE](MIT-LICENSE) file for details
