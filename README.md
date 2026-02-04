@@ -2,7 +2,58 @@
 
 ## About
 
+ActiveModel::Serializers is a Ruby gem that provides a powerful framework for building JSON APIs. It allows you to generate your JSON in an object-oriented and convention-driven manner, making it easy to create consistent and maintainable API responses.
+
 ActiveModelSerializers is undergoing some renovations. See [Development Status](#status-of-ams).
+
+## Installation
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'active_model_serializers', '~> 0.10.0'
+```
+
+And then execute:
+
+```bash
+$ bundle install
+```
+
+Or install it yourself as:
+
+```bash
+$ gem install active_model_serializers
+```
+
+## Usage
+
+ActiveModel::Serializers allows you to define serializers for your models to control JSON output.
+
+### Basic Example
+
+Create a serializer for your model:
+
+```ruby
+class PostSerializer < ActiveModel::Serializer
+  attributes :id, :title, :body
+  has_many :comments
+  belongs_to :author
+end
+```
+
+Then use it in your controller:
+
+```ruby
+class PostsController < ApplicationController
+  def show
+    @post = Post.find(params[:id])
+    render json: @post
+  end
+end
+```
+
+For detailed usage instructions and advanced features, please refer to the [Documentation](#documentation) section below.
 
 ## Getting Help
 
@@ -109,3 +160,9 @@ This project adheres to [semver](http://semver.org/)
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## License
+
+This project is licensed under the MIT License - see the [MIT-LICENSE](MIT-LICENSE) file for details.
+
+Copyright (c) 2014 Steve Klabnik
